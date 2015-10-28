@@ -1,6 +1,6 @@
 #!/bin/bash
 echo Yong:1|sudo chpasswd
-echo 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' | sudo tee /etc/apt/sources.list
+echo 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib' | sudo tee -a /etc/apt/sources.list
 sudo apt-get update
 sleep 60 # 1 min
 sudo apt-get install -y vim openvswitch-switch virtualbox-5.0 dkms axel
