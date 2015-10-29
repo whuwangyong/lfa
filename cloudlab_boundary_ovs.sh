@@ -7,12 +7,12 @@ then
 	exit
 fi
 
-sudo apt-get update
+sudo apt-get update -q=2
 sudo apt-get install -y vim openvswitch-switch dkms axel
-axel http://download.virtualbox.org/virtualbox/5.0.8/virtualbox-5.0_5.0.8-103449~Ubuntu~precise_amd64.deb
+axel --quiet http://download.virtualbox.org/virtualbox/5.0.8/virtualbox-5.0_5.0.8-103449~Ubuntu~precise_amd64.deb
 sudo dpkg -i virtualbox-5.0_5.0.8-103449~Ubuntu~precise_amd64.deb
 sudo apt-get -f install -y
-axel http://download.virtualbox.org/virtualbox/5.0.8/Oracle_VM_VirtualBox_Extension_Pack-5.0.8-103449.vbox-extpack
+axel -q http://download.virtualbox.org/virtualbox/5.0.8/Oracle_VM_VirtualBox_Extension_Pack-5.0.8-103449.vbox-extpack
 sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.8-103449.vbox-extpack
 echo "************ vim openvswitch-switch virtualbox is installed *****************"
 
