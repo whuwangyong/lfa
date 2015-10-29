@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo ovs-vsctl add-br br0
-sudo ovs-vsctl set-controller br0 tcp:155.98.39.120:6653
+sudo ovs-vsctl set-controller br0 tcp:155.98.39.124:6653
 
 
 function add_port()
