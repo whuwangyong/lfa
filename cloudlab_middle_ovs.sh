@@ -6,7 +6,7 @@ then
 	echo "such as 01,09,0a,11"
 	exit
 fi
-sudo apt-get update
+sudo apt-get update -q=2
 sudo apt-get install -y vim openvswitch-switch
 
 sudo ovs-vsctl add-br br0
