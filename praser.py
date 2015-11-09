@@ -68,8 +68,8 @@ def praser_reactive_flow_and_inseart():
 					"cookie":0, 
 					"priority":r_flow.get("priority"),
 					# # "table":r_flow.get("tableId"), 
-					# "idle_timeout":r_flow.get("idleTimeoutSec"),
-					# "hard_timeout":r_flow.get("hardTimeoutSec"),
+					"idle_timeout":r_flow.get("idleTimeoutSec"),
+					"hard_timeout":r_flow.get("hardTimeoutSec"),
 					"in_port":r_flow.get("match").get("in_port"),
 					"eth_type":"0x0800",
 					"ipv4_src":r_flow.get("match").get("ipv4_src"),
@@ -80,11 +80,17 @@ def praser_reactive_flow_and_inseart():
 				pusher.set(flow)	
 
 
-
-
-
 praser_reactive_flow_and_inseart()
 
+def print_target_links():
+	d = simple_json_get('http://localhost:8080/wm/lfa/targetlinks/json') # list
+	print 'target links:'
+	print '******************************************'
+	for link in d:
+		print json.dumps(link, sort_keys=False, indent=4, separators=(',', ': '))
+	print '******************************************'
+
+print_target_links()
 
 
 def praser_all_flow():
