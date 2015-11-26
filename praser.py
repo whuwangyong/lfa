@@ -50,7 +50,7 @@ def print_liu():
 	for sw in d.iterkeys():
 		print sw
 		for r_flow in d.get(sw).get("flows"):
-			print 'packetCount:', f_flow.get("packetCount")
+			print 'packetCount:', r_flow.get("packetCount")
 			print 'byteCount:', r_flow.get("byteCount")
 			print 'in_port:', r_flow.get("match").get("in_port")
 			print 'ipv4_src:', r_flow.get("match").get("ipv4_src")
