@@ -45,7 +45,7 @@ def simple_json_get(url):
 
 def print_liu():
 	d = simple_json_get('http://localhost:8080/wm/core/switch/all/flow/json')
-	print 'length:',len(d)
+	print 'ovs count:',len(d)
 	# print d.keys()
 	for sw in d.iterkeys():
 		print sw
@@ -56,8 +56,8 @@ def print_liu():
 			print 'ipv4_src:', r_flow.get("match").get("ipv4_src")
 			print 'ipv4_dst:', r_flow.get("match").get("ipv4_dst")
 			print 'actions:', r_flow.get("actions").get("actions")
-			print '====================================='
-
+			print '------------------------'
+		print '===================================================='
 print_liu()
 
 def praser_reactive_flow_and_inseart():
