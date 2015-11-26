@@ -55,6 +55,13 @@ def praser_reactive_flow_and_inseart():
 	for sw in d.iterkeys():
 		print sw
 		for r_flow in d.get(sw).get("flows"):
+			print 'packetCount:', f_flow.get("packetCount")
+			print 'byteCount:', r_flow.get("byteCount")
+			print 'in_port:', r_flow.get("match").get("in_port")
+			print 'ipv4_src:', r_flow.get("match").get("ipv4_src")
+			print 'ipv4_dst:', r_flow.get("match").get("ipv4_dst")
+			print 'actions:', r_flow.get("actions").get("actions")
+			print '====================================='
 			if r_flow.get("instructions").get("instruction_apply_actions").get("actions") == "output=controller":
 				continue
 			if r_flow.get("match").get("eth_type") == "0x0x800" and r_flow.get("flags") == "0": # ip protocl && reactive flow
@@ -77,7 +84,7 @@ def praser_reactive_flow_and_inseart():
 	    			"actions":r_flow.get("instructions").get("instruction_apply_actions").get("actions")
 				}
 				# print flow
-				pusher.set(flow)	
+				# pusher.set(flow)	
 
 
 praser_reactive_flow_and_inseart()
@@ -90,7 +97,7 @@ def print_target_links():
 		print json.dumps(link, sort_keys=False, indent=4, separators=(',', ': '))
 	print '******************************************'
 
-print_target_links()
+# print_target_links()
 
 
 def praser_all_flow():
