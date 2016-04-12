@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # coding=utf-8
 
+# @author wangyong
+# 2016.4.12
+
+# get target links of SDN
+# floodlight + mininet
+# midify floodlight /src/main/java/net/floodlightcontroller/routing/ForwardingBase.java 
+# public static int FLOWMOD_DEFAULT_IDLE_TIMEOUT = 0; // infinite
+
 import httplib
 import urllib2
 import json
